@@ -142,7 +142,7 @@ with tabs[2]:
     col_en1, col_en2 = st.columns(2)
     
     for i in range(2, 14):
-        img_name = f"energias_limpias({i}).png"
+        img_name = f"outputs/energias_limpias({i}).png"
         target_col = col_en1 if i % 2 == 0 else col_en2
         with target_col:
             try:
