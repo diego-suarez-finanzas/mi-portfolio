@@ -138,5 +138,5 @@ with tab_graphics:
             st.image("outputs/Hoja de Vida Diego.png", use_container_width=True)
             st.caption("Infografía ejecutiva con trayectoria, habilidades clave y logros.")
 
-    }
+    # Cierre del módulo analítico interactivo
     st.area_chart(datos_meses)
