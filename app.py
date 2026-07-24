@@ -88,7 +88,7 @@ with tab_graphics:
     # ----------------------------------------------------
     # FILA 1: Comparativos de Capital y Control Operativo
     # ----------------------------------------------------
-    f1_col1, f1_col2 = st.columns(2)
+        f1_col1, f1_col2 = st.columns(2)
     
     with f1_col1:
         with st.container(border=True):
