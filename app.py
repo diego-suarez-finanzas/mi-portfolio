@@ -47,7 +47,7 @@ with col_info2:
     st.markdown("<h2 style='font-size: 26px;'>💼 Experiencia Estratégica y Casos de Éxito</h2>", unsafe_allow_html=True)
     col_c1, col_c2 = st.columns(2)
         with col_c1:
-        with st.container(border=True):
+            with st.container(border=True):
             st.image("outputs/diego_suarez.png", use_container_width=True)
 
             st.markdown("<h3 style='font-size: 22px;'>🥬 Proyecto Ancla: AgroTech DF-Colombia S.A.S.</h3>", unsafe_allow_html=True)
