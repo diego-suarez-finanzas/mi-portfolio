@@ -49,7 +49,7 @@ with col_info2:
     with col_c1:
             
     with st.container(border=True):
-            st.image("outputs/diego_suarez.png", use_container_width=True)
+    st.image("outputs/diego_suarez.png", use_container_width=True)
 
             st.markdown("<h3 style='font-size: 22px;'>🥬 Proyecto Ancla: AgroTech DF-Colombia S.A.S.</h3>", unsafe_allow_html=True)
             st.markdown("<p style='font-size: 16px; color: #e67e22;'><b>Rol:</b> Arquitecto Financiero y Desarrollador Líder</p>", unsafe_allow_html=True)
