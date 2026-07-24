@@ -81,10 +81,9 @@ with col_info2:
                     "</ul>", unsafe_allow_html=True)
 
 with tab_graphics:
-    with tab_graphics:
-    st.markdown("<h2 style='font-size: 26px;'>🌱 Panel de Control y Rendimiento AgroTech</h2>", unsafe_allow_html=True)
-    st.markdown("Visualización completa de indicadores financieros, flujos de caja y proyecciones de cultivos automatizados.")
-    st.markdown("---")
+        st.markdown("<h2 style='font-size: 26px;'>🌱 Panel de Control y Rendimiento AgroTech</h2>", unsafe_allow_html=True)
+        st.markdown("Visualización completa de indicadores financieros, flujos de caja y proyecciones de cultivos automatizados.")
+        st.markdown("---")
     
     # ----------------------------------------------------
     # FILA 1: Comparativos de Capital y Control Operativo
