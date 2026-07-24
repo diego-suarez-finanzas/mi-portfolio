@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 # Configuración de la plataforma web en modo ancho
 st.set_page_config(
@@ -19,7 +18,7 @@ tab_cv, tab_graphics = st.tabs(["👔 Currículum Vitae Ejecutivo", "📊 Simula
 
 with tab_cv:
     # -------------------------------------------------------------
-    # PESTAÑA 1: HOJA DE VIDA
+    # PESTAÑA 1: TU HOJA DE VIDA OPTIMIZADA
     # -------------------------------------------------------------
     st.markdown("<h2 style='font-size: 26px;'>🎯 Perfil Profesional</h2>", unsafe_allow_html=True)
     st.markdown(
@@ -30,27 +29,13 @@ with tab_cv:
         "arquitectura de datos aplicada a la toma de decisiones estratégicas de alta gerencia.</p>", 
         unsafe_allow_html=True
     )
-
-    # Sección de Propuesta Freelance y Contacto (Visible en el encabezado)
-col_info1, col_info2 = st.columns([2, 1])
-
-with col_info1:
-
-    st.image("outputs/diego_suarez.jpg", width=250)
-
-    st.info("🌐 **Servicios Profesionales Freelance:** Ofrezco soluciones estratégicas en **Análisis Financiero** y **Marketing Digital** adaptadas a empresas y emprendimientos en cualquier país de Latinoamérica de forma remota.")
-
-with col_info2:
-    st.link_button("📬 Escríbeme un Correo", "mailto:suarezt.diegof@gmail.com", use_container_width=True)
-
     st.markdown("---")
+
     st.markdown("<h2 style='font-size: 26px;'>💼 Experiencia Estratégica y Casos de Éxito</h2>", unsafe_allow_html=True)
+    
     col_c1, col_c2 = st.columns(2)
     with col_c1:
-            
         with st.container(border=True):
-            st.image("outputs/diego_suarez.png", use_container_width=True)
-
             st.markdown("<h3 style='font-size: 22px;'>🥬 Proyecto Ancla: AgroTech DF-Colombia S.A.S.</h3>", unsafe_allow_html=True)
             st.markdown("<p style='font-size: 16px; color: #e67e22;'><b>Rol:</b> Arquitecto Financiero y Desarrollador Líder</p>", unsafe_allow_html=True)
             st.markdown("---")
@@ -81,62 +66,35 @@ with col_info2:
                     "</ul>", unsafe_allow_html=True)
 
 with tab_graphics:
-        st.markdown("<h2 style='font-size: 26px;'>🌱 Panel de Control y Rendimiento AgroTech</h2>", unsafe_allow_html=True)
-        st.markdown("Visualización completa de indicadores financieros, flujos de caja y proyecciones de cultivos automatizados.")
-        st.markdown("---")
+    # -------------------------------------------------------------
+    # PESTAÑA 2: GRÁFICOS Y ANÁLISIS FINANCIERO DE AGROTECH
+    # -------------------------------------------------------------
+    st.markdown("<h2 style='font-size: 26px;'>📊 Cuadro de Mando Integral - AgroTech Semestral</h2>", unsafe_allow_html=True)
     
-    # ----------------------------------------------------
-    # FILA 1: Comparativos de Capital y Control Operativo
-    # ----------------------------------------------------
-        f1_col1, f1_col2 = st.columns(2)
+    f1_col1, f1_col2 = st.columns(2)
     
-        with f1_col1:
-            with st.container(border=True):
-                st.markdown("### 📊 Comparativos de Capital")
-            # Ojo: Tu archivo tiene una doble extensión ".png.png" según la imagen
-                st.image("outputs/Comparativos de Capital (Dupont vs WACC)png.png", use_container_width=True)
-                st.caption("Análisis DuPont estructurado frente al Costo Promedio Ponderado de Capital (WACC).")
-
+    with f1_col1:
+        with st.container(border=True):
+            st.markdown("### ### 📊 Comparativos de Rentabilidad")
+            datos_capital = {
+                "ROE (Patrimonio)": -64.23,
+                "ROA (Activos)": -64.23,
+                "ROIC (Capital)": -41.75,
+                "WACC (Meta)": 7.50
+            }
+            st.bar_chart(datos_capital)
+            st.caption("Análisis DuPont y Costo de Capital Aplicado")
+            
     with f1_col2:
         with st.container(border=True):
-                st.markdown("### 🎛️ Control Operativo")
-                st.image("outputs/Control Operativo y Proyección Interactiva.png", use_container_width=True)
-                st.caption("Monitoreo de variables de producción y proyecciones interactivas.")
-
-    # ----------------------------------------------------
-    # FILA 2: Evolución Temporal y Valoración Avanzada
-    # ----------------------------------------------------
-    f2_col1, f2_col2 = st.columns(2)
-    
-    with f2_col1:
-        with st.container(border=True):
-            st.markdown("### 📉 Evolución Temporal")
-            st.image("outputs/Evolución Temporal del Semestre.png", use_container_width=True)
-            st.caption("Comportamiento histórico y tendencias financieras a lo largo del periodo.")
-
-    with f2_col2:
-        with st.container(border=True):
-            st.markdown("### 💎 Valoración Avanzada")
-            st.image("outputs/Módulo de Valoración Avanzada.png", use_container_width=True)
-            st.caption("Modelado robusto para la evaluación de activos e indicadores de rendimiento.")
-
-    # ----------------------------------------------------
-    # FILA 3: Portafolio de Cultivos y Hoja de Vida Gráfica
-    # ----------------------------------------------------
-    f3_col1, f3_col2 = st.columns(2)
-    
-    with f3_col1:
-        with st.container(border=True):
-            st.markdown("### 🌾 Portafolio de Cultivos")
-            # Nota: El nombre en tu imagen termina en tres puntos, asegúrate de escribirlo idéntico o renombrarlo
-            st.image("outputs/Portafolio Cultivos Complementarios y Mitigación ...", use_container_width=True)
-            st.caption("Estrategia de diversificación agrícola y mitigación de riesgos financieros.")
-
-    with f3_col2:
-        with st.container(border=True):
-            st.markdown("### 📄 Hoja de Vida Resumida")
-            st.image("outputs/Hoja de Vida Diego.png", use_container_width=True)
-            st.caption("Infografía ejecutiva con trayectoria, habilidades clave y logros.")
-
-    # Cierre del módulo analítico interactivo
-    st.area_chart(datos_meses)
+            st.markdown("### 📊 Control Operativo Semestral")
+            datos_meses = {
+                "Enero": -6710.44, 
+                "Febrero": 1121.92, 
+                "Marzo": -8422.25, 
+                "Abril": -7346.33, 
+                "Mayo": 1120.06, 
+                "Junio": -5038.48
+            }
+            st.area_chart(datos_meses)
+            st.caption("Monitoreo de Flujo de Caja e Indicadores Dinámicos")
