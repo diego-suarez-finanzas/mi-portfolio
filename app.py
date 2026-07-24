@@ -112,7 +112,7 @@ with tabs[1]:
     col_ag1, col_ag2 = st.columns(2)
     
     # Diccionario con rutas ordenadas de forma secuencial
-            agtech_images = [
+    agtech_images = [
         "outputs/agtech_indoor(1).png", 
         "outputs/agtech_indoor(2).png", 
         "outputs/agtech_indoor(3).png",
