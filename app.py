@@ -90,12 +90,12 @@ with tab_graphics:
     # ----------------------------------------------------
         f1_col1, f1_col2 = st.columns(2)
     
-    with f1_col1:
-        with st.container(border=True):
-            st.markdown("### 📊 Comparativos de Capital")
+        with f1_col1:
+            with st.container(border=True):
+                st.markdown("### 📊 Comparativos de Capital")
             # Ojo: Tu archivo tiene una doble extensión ".png.png" según la imagen
-            st.image("outputs/Comparativos de Capital (Dupont vs WACC)png.png", use_container_width=True)
-            st.caption("Análisis DuPont estructurado frente al Costo Promedio Ponderado de Capital (WACC).")
+                st.image("outputs/Comparativos de Capital (Dupont vs WACC)png.png", use_container_width=True)
+                st.caption("Análisis DuPont estructurado frente al Costo Promedio Ponderado de Capital (WACC).")
 
     with f1_col2:
         with st.container(border=True):
