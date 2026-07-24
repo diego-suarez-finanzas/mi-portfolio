@@ -99,9 +99,9 @@ with tab_graphics:
 
     with f1_col2:
         with st.container(border=True):
-            st.markdown("### 🎛️ Control Operativo")
-            st.image("outputs/Control Operativo y Proyección Interactiva.png", use_container_width=True)
-            st.caption("Monitoreo de variables de producción y proyecciones interactivas.")
+                st.markdown("### 🎛️ Control Operativo")
+                st.image("outputs/Control Operativo y Proyección Interactiva.png", use_container_width=True)
+                st.caption("Monitoreo de variables de producción y proyecciones interactivas.")
 
     # ----------------------------------------------------
     # FILA 2: Evolución Temporal y Valoración Avanzada
