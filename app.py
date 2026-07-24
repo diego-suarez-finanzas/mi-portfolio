@@ -1,100 +1,151 @@
 import streamlit as st
 
-# Configuración de la plataforma web en modo ancho
+# 1. CONFIGURACIÓN DE LA PÁGINA (SEO Y KEYWORDS SE OCULTAN EN METADATOS)
 st.set_page_config(
-    page_title="Portfolio Profesional - Diego Fernando Suárez",
+    page_title="Diego Suárez - Consultor Senior & Freelancer",
+    page_icon="💼",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# Título de impacto del sitio web público
-st.markdown("<h1 style='font-size: 38px;'>🚀 PORTFOLIO PROFESIONAL E INTERACTIVO</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='font-size: 24px;'><b>Diego Fernando Suárez Toscano</b> | Consultor Financiero & Programador Analítico</h3>", unsafe_allow_html=True)
-st.markdown("<p style='font-size: 18px; color: #b2bec3;'>📍 Distrito Capital, Colombia | ✉️ suarezt.diegof@gmail.com</p>", unsafe_allow_html=True)
-st.markdown("---")
+# Estilos CSS personalizados para mejorar el diseño oscuro y las tarjetas
+st.markdown("""
+    <style>
+    .keyword-tag {
+        display: inline-block;
+        background-color: #1E293B;
+        color: #38BDF8;
+        padding: 4px 10px;
+        margin: 4px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid #334155;
+    }
+    .text-highlight {
+        color: #F59E0B;
+        font-weight: bold;
+    }
+    /* Ocultar menú de desarrollo en producción para marca blanca */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
 
-# Sistema de pestañas para dividir el Currículum de las Gráficas
-tab_cv, tab_graphics = st.tabs(["👔 Currículum Vitae Ejecutivo", "📊 Simulador Analítico AgroTech"])
+# 2. SISTEMA DE NAVEGACIÓN SIMPLIFICADO (Pestañas superiores de alto impacto)
+tabs = st.tabs([
+    "👤 Perfil Profesional", 
+    "🌱 Simulador Analítico AgroTech", 
+    "⚡ Vectores Emergentes Colombia"
+])
 
-with tab_cv:
-    # -------------------------------------------------------------
-    # PESTAÑA 1: TU HOJA DE VIDA OPTIMIZADA
-    # -------------------------------------------------------------
-    st.markdown("<h2 style='font-size: 26px;'>🎯 Perfil Profesional</h2>", unsafe_allow_html=True)
-    st.markdown(
-        "<p style='font-size: 19px; line-height: 1.6;'>Consultor financiero senior y desarrollador de software "
-        "especializado en el ecosistema corporativo e industrial. Experto en transformar datos transaccionales "
-        "crudos en Web Apps analíticas interactivas de alto rendimiento. Dominio avanzado de modelos de valoración "
-        "institucional (DuPont, ROIC, WACC, VAN/TIR), optimización de procesos mediante Inteligencia Artificial y "
-        "arquitectura de datos aplicada a la toma de decisiones estratégicas de alta gerencia.</p>", 
-        unsafe_allow_html=True
-    )
-    st.markdown("---")
-
-    st.markdown("<h2 style='font-size: 26px;'>💼 Experiencia Estratégica y Casos de Éxito</h2>", unsafe_allow_html=True)
+# ==========================================
+# PESTAÑA 1: PERFIL PROFESIONAL
+# ==========================================
+with tabs[0]:
+    # Estructura en columnas para incluir tu foto (REQUERIMIENTO 2)
+    col_foto, col_texto = st.columns([1, 3])
     
-    col_c1, col_c2 = st.columns(2)
-    with col_c1:
-        with st.container(border=True):
-            st.markdown("<h3 style='font-size: 22px;'>🥬 Proyecto Ancla: AgroTech DF-Colombia S.A.S.</h3>", unsafe_allow_html=True)
-            st.markdown("<p style='font-size: 16px; color: #e67e22;'><b>Rol:</b> Arquitecto Financiero y Desarrollador Líder</p>", unsafe_allow_html=True)
-            st.markdown("---")
-            st.markdown("<ul style='font-size: 17px; line-height: 1.5;'>"
-                        "<li><b>Automatización Analítica:</b> Creación de aplicaciones web interactivas (Python + Streamlit) para control operativo.</li>"
-                        "<li><b>Modelado Avanzado:</b> Implementación del despiece del Sistema DuPont, ROIC y mitigación de riesgo de portafolio dual.</li>"
-                        "<li><b>Simulación Predictiva:</b> Diseño de motores predictivos a 5 años (VAN de $105,168.29 USD y TIR de 84.11%) para blindar caja.</li>"
-                        "</ul>", unsafe_allow_html=True)
-    with col_c2:
-        with st.container(border=True):
-            st.markdown("<h3 style='font-size: 22px;'>⚡ Americana de Energía SAS ESP</h3>", unsafe_allow_html=True)
-            st.markdown("<p style='font-size: 16px; color: #3498db;'><b>Rol:</b> Consultor Senior en Estrategia de Inversión</p>", unsafe_allow_html=True)
-            st.markdown("---")
-            st.markdown("<ul style='font-size: 17px; line-height: 1.5;'>"
-                        "<li><b>Optimización de Activos:</b> Análisis financiero avanzado frente a sistemas híbridos y vectores energéticos emergentes.</li>"
-                        "<li><b>Evaluación de Proyectos:</b> Modelado global de CAPEX/OPEX en el ecosistema energético colombiano (TIR del 11.5% al 16.8%).</li>"
-                        "<li><b>Mitigación de Riesgos:</b> Estructuración de matrices DOFA equilibradas y narrativas de viabilidad para mesas de inversión.</li>"
-                        "</ul>", unsafe_allow_html=True)
-
-    st.markdown("")
-    with st.container(border=True):
-        st.markdown("<h3 style='font-size: 22px;'>🏢 Conserse Ltda. (Consultores en Servicios y Seguros)</h3>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 16px; color: #9b59b6;'><b>Rol:</b> Asistente de IA e Informática Operativa</p>", unsafe_allow_html=True)
-        st.markdown("---")
-        st.markdown("<ul style='font-size: 17px; line-height: 1.5;'>"
-                    "<li><b>Optimización de Procesos:</b> Diseño e implementación de herramientas de IA aplicadas a la eficiencia operativa interna.</li>"
-                    "<li><b>Marketing de Rendimiento:</b> Automatización de flujos de datos comerciales y analítica de conversión para el sector.</li>"
-                    "</ul>", unsafe_allow_html=True)
-
-with tab_graphics:
-    # -------------------------------------------------------------
-    # PESTAÑA 2: GRÁFICOS Y ANÁLISIS FINANCIERO DE AGROTECH
-    # -------------------------------------------------------------
-    st.markdown("<h2 style='font-size: 26px;'>📊 Cuadro de Mando Integral - AgroTech Semestral</h2>", unsafe_allow_html=True)
-    
-    f1_col1, f1_col2 = st.columns(2)
-    
-    with f1_col1:
-        with st.container(border=True):
-            st.markdown("### ### 📊 Comparativos de Rentabilidad")
-            datos_capital = {
-                "ROE (Patrimonio)": -64.23,
-                "ROA (Activos)": -64.23,
-                "ROIC (Capital)": -41.75,
-                "WACC (Meta)": 7.50
-            }
-            st.bar_chart(datos_capital)
-            st.caption("Análisis DuPont y Costo de Capital Aplicado")
+    with col_foto:
+        try:
+            st.image("diego_suarez.jpg", use_container_width=True)
+        except:
+            # Cuadro de respaldo si la foto no se encuentra en el directorio
+            st.info("📸 Espacio para: diego_suarez.jpg")
             
-    with f1_col2:
-        with st.container(border=True):
-            st.markdown("### 📊 Control Operativo Semestral")
-            datos_meses = {
-                "Enero": -6710.44, 
-                "Febrero": 1121.92, 
-                "Marzo": -8422.25, 
-                "Abril": -7346.33, 
-                "Mayo": 1120.06, 
-                "Junio": -5038.48
-            }
-            st.area_chart(datos_meses)
-            st.caption("Monitoreo de Flujo de Caja e Indicadores Dinámicos")
+    with col_texto:
+        st.title("Perfil Profesional")
+        
+        # Texto de presentación potente
+        st.markdown("""
+        Consultor financiero senior y desarrollador de software especializado en el ecosistema corporativo e industrial. 
+        Experto en transformar datos transaccionales crudos en Web Apps analíticas interactivas de alto rendimiento. 
+        Dominio avanzado de modelos de valoración institucional (DuPont, ROIC, WACC, VAN/TIR), optimización de 
+        procesos mediante Inteligencia Artificial y arquitectura de datos aplicada a la toma de decisiones estratégicas de alta gerencia.
+        """)
+        
+        # Especificación de Servicios Freelancer (REQUERIMIENTO 1)
+        st.markdown("""
+        ---
+        ### 🌍 Servicios Freelancer de Disponibilidad Inmediata
+        Ofrezco mis servicios especializados como **Freelancer para cualquier país de Latinoamérica**. 
+        Mi modalidad de trabajo está diseñada para la agilidad y necesidades de tu negocio:
+        * ⏱️ **Contratación por Horas** (Soporte puntual, resolución de bugs o asesorías).
+        * 📅 **Contratos Cortos por Entregables** (Desarrollo rápido de MVPs, dashboards o evaluaciones financieras).
+        
+        *¡Contáctame hoy mismo para acelerar tus proyectos estratégicos sin costos fijos a largo plazo!*
+        """, unsafe_allow_html=True)
+
+    # Bloque de Keywords para CEOs y Algoritmos de búsqueda (REQUERIMIENTO 3)
+    st.markdown("### 🔍 Especialidades Técnicas y Estratégicas")
+    keywords = [
+        "Freelancer", "Analista Estratégico Senior", "Consultor de Business Intelligence [BI] (R y Python)", 
+        "Análisis Financiero Online", "Marketing Digital", "Evaluación Financiera de Proyectos", 
+        "Formulación de Proyectos", "Estrategia y Arquitectura de Datos", "Consultoría de Operaciones y Eficiencia"
+    ]
+    
+    # Renderizado estético de etiquetas HTML para las palabras clave
+    kw_html = "".join([f'<span class="keyword-tag">{kw}</span>' for kw in keywords])
+    st.markdown(kw_html, unsafe_allow_html=True)
+    
+    # Sección de experiencia (Versión resumida para mantenerla corta)
+    st.markdown("---")
+    st.subheader("💼 Experiencia Estratégica y Casos de Éxito")
+    col_p1, col_p2 = st.columns(2)
+    with col_p1:
+        st.markdown("**Proyecto Ancla: AgroTech DF-Colombia S.A.S.**")
+        st.caption("Rol: Arquitecto Financiero y Desarrollador Líder")
+    with col_p2:
+        st.markdown("**Americana de Energía SAS ESP**")
+        st.caption("Rol: Consultor Senior en Estrategia de Inversión")
+
+# ==========================================
+# PESTAÑA 2: SIMULADOR ANALÍTICO AGROTECH
+# ==========================================
+with tabs[1]:
+    st.title("🌱 Simulador Analítico AgroTech")
+    st.markdown("Visualización de las interfaces y módulos interactivos desarrollados para el sector agroindustrial.")
+    
+    # Galería de imágenes agtech_indoor (REQUERIMIENTO 4)
+    # Mostramos 5 imágenes organizadas en un grid dinámico para que no ocupe demasiado espacio vertical
+    col_ag1, col_ag2 = st.columns(2)
+    
+    # Diccionario con rutas ordenadas de forma secuencial
+            agtech_images = [
+        "outputs/agtech_indoor(1).png", 
+        "outputs/agtech_indoor(2).png", 
+        "outputs/agtech_indoor(3).png",
+        "outputs/agtech_indoor(4).png", 
+        "outputs/agtech_indoor(5).png"
+    ]
+    
+    for idx, img_name in enumerate(agtech_images):
+        # Alterna las capturas entre la columna izquierda y derecha
+        target_col = col_ag1 if idx % 2 == 0 else col_ag2
+        with target_col:
+            try:
+                st.image(img_name, caption=f"Módulo Analítico - Vista {idx+1}", use_container_width=True)
+            except:
+                st.warning(f"No se pudo cargar {img_name}")
+
+# ==========================================
+# PESTAÑA 3: VECTORES EMERGENTES MATRÍZ ENERGÉTICA
+# ==========================================
+with tabs[2]:
+    # Nueva sección creada (REQUERIMIENTO 5)
+    st.title("⚡ Vectores Emergentes Matríz Energética Colombia")
+    st.markdown("Galería de reportes técnicos, modelos analíticos y matrices de evaluación del sector energético.")
+    
+    # Renderizado directo de las capturas (Word a PNG) sin procesamiento extra
+    # Genera la lista consecutiva desde energias_limpias(2).png hasta energias_limpias(13).png
+    col_en1, col_en2 = st.columns(2)
+    
+    for i in range(2, 14):
+        img_name = f"energias_limpias({i}).png"
+        target_col = col_en1 if i % 2 == 0 else col_en2
+        with target_col:
+            try:
+                st.image(img_name, caption=f"Reporte Técnico - Folio {i}", use_container_width=True)
+            except:
+                st.warning(f"No se pudo cargar {img_name}")
