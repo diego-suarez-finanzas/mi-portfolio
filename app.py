@@ -43,19 +43,26 @@ tabs = st.tabs([
 # ==========================================
 # PESTAÑA 1: PERFIL PROFESIONAL
 # ==========================================
-with tabs[0]:
-    # Estructura en columnas para incluir tu foto (REQUERIMIENTO 2)
+with tabs:
+    # Estructura en columnas para incluir tu foto
     col_foto, col_texto = st.columns([1, 3])
     
     with col_foto:
         try:
-            st.image("diego_suarez.jpg", use_container_width=True)
+            # Opción 1: Buscar en la carpeta outputs
+            st.image("outputs/diego_suarez.jpg", use_container_width=True)
         except:
-            # Cuadro de respaldo si la foto no se encuentra en el directorio
-            st.info("📸 Espacio para: diego_suarez.jpg")
+            try:
+                # Opción 2: Buscar en la raíz por si acaso
+                st.image("diego_suarez.jpg", use_container_width=True)
+            except:
+                st.info("📸 Espacio para: diego_suarez.jpg")
             
     with col_texto:
         st.title("Perfil Profesional")
+        
+        # CORREO EN ALTO IMPACTO VISUAL
+        st.markdown("### 📧 Contacto Inmediato: **suarezt.diego.f@gmail.com**")
         
         # Texto de presentación potente
         st.markdown("""
@@ -65,7 +72,7 @@ with tabs[0]:
         procesos mediante Inteligencia Artificial y arquitectura de datos aplicada a la toma de decisiones estratégicas de alta gerencia.
         """)
         
-        # Especificación de Servicios Freelancer (REQUERIMIENTO 1)
+        # Especificación de Servicios Freelancer
         st.markdown("""
         ---
         ### 🌍 Servicios Freelancer de Disponibilidad Inmediata
