@@ -43,7 +43,8 @@ tabs = st.tabs([
 # ==========================================
 # PESTAÑA 1: PERFIL PROFESIONAL
 # ==========================================
-with tabs:
+with tabs[0]:
+
     # Estructura en columnas para incluir tu foto
     col_foto, col_texto = st.columns([1, 3])
     
