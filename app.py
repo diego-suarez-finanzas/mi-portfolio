@@ -13,7 +13,7 @@ st.markdown("<h1 style='font-size: 38px;'>🚀 PORTFOLIO PROFESIONAL E INTERACTI
 st.markdown("<h3 style='font-size: 24px;'><b>Diego Fernando Suárez Toscano</b> | Consultor Financiero & Programador Analítico</h3>", unsafe_allow_html=True)
 st.markdown("<p style='font-size: 18px; color: #b2bec3;'>📍 Distrito Capital, Colombia | ✉️ suarezt.diegof@gmail.com</p>", unsafe_allow_html=True)
 st.markdown("---")
-.
+
 # Sistema de pestañas para dividir el Currículum de las Gráficas
 tab_cv, tab_graphics = st.tabs(["👔 Currículum Vitae Ejecutivo", "📊 Simulador Analítico AgroTech"])
 
