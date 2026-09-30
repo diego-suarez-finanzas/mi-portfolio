@@ -1,12 +1,12 @@
 import streamlit as st
 
-# 1. CONFIGURACIÓN DE LA PÁGINA (SEO Y KEYWORDS SE OCULTAN EN METADATOS)
+# ESTA DEBE SER LA PRIMERA LÍNEA DE CÓDIGO ACTIVO
 st.set_page_config(
-    page_title="Diego Suárez - Consultor Senior & Freelancer",
-    page_icon="💼",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    page_title="Ruta de la Seda Analytics", 
+    page_icon="🚢", 
+    layout="wide"
 )
+
 
 # Estilos CSS personalizados para mejorar el diseño oscuro y las tarjetas
 st.markdown("""
@@ -37,8 +37,29 @@ st.markdown("""
 tabs = st.tabs([
     "👤 Perfil Profesional", 
     "🌱 Simulador Analítico AgroTech", 
-    "⚡ Vectores Emergentes Colombia"
+    "⚡ Vectores Emergentes Colombia",
+    "🚢 Conectividad Comercial BRICS-Seda"
 ])
+# --- INYECCIÓN DE ESTILOS DE GAMA ALTA (24PX GLOBAL) ---
+st.markdown("""
+    <style>
+    /* Tamaño gigante para textos de párrafos y viñetas en todas las pestañas */
+    div[data-testid="stMarkdownContainer"] p, 
+    div[data-testid="stMarkdownContainer"] li {
+        font-size: 24px !important;
+        line-height: 1.7 !important;
+    }
+    /* Tamaño macro para subtítulos técnicos e idiomas (H3) */
+    div[data-testid="stMarkdownContainer"] h3 {
+        font-size: 32px !important;
+        font-weight: bold !important;
+    }
+    /* Ajuste homogéneo para los cuadros informativos inferiores */
+    .stAlert p {
+        font-size: 24px !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # ==========================================
 # PESTAÑA 1: PERFIL PROFESIONAL
@@ -157,3 +178,96 @@ with tabs[2]:
                 st.image(img_name, caption=f"Reporte Técnico - Folio {i}", use_container_width=True)
             except:
                 st.warning(f"No se pudo cargar {img_name}")
+
+
+
+# ==============================================================================
+# PESTAÑA 4: PROPUESTA FREELANCER BRICS LATAM-CHINA
+# ==============================================================================
+# ==============================================================================
+# PESTAÑA 4: PROPUESTA FREELANCER BRICS LATAM-CHINA
+# ==============================================================================
+with tabs[3]:
+    # --- INYECCIÓN DE ESTILOS SEGURA (AFECTA SOLO AL TEXTO INTERNO, NO AL MENÚ) ---
+    st.markdown("""
+        <style>
+        /* Engorda y agranda el texto de los párrafos y listas internas */
+        div[data-testid="stMarkdownContainer"] p, 
+        div[data-testid="stMarkdownContainer"] li {
+            font-size: 24px !important;
+            line-height: 1.7 !important;
+        }
+        /* Agranda los subtítulos de los idiomas (H3) */
+        div[data-testid="stMarkdownContainer"] h3 {
+            font-size: 32px !important;
+            font-weight: bold !important;
+        }
+        /* Ajuste de tamaño para los bloques informativos inferiores */
+        .stAlert p {
+            font-size: 24px !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    st.header("🚢 Servicios de Inteligencia Comercial e Intermediación Global")
+    st.caption("Estructuración de Operaciones Bilaterales de Comercio Exterior — Diego Suárez")
+    st.markdown("---")
+    
+    st.markdown("""
+    ### 🤝 El Puente de Conectividad Comercial
+    Consultoría estratégica orientada a actuar como un **Zhōngjiè (仲介 - Intermediario de Confianza)** de alta eficiencia, 
+    vinculando de forma directa a empresas de tecnología, logística y manufactura en Asia con los mercados emergentes 
+    de América Latina. 
+    
+    Esta propuesta está diseñada con un enfoque analítico estricto para mitigar barreras culturales, logísticas y 
+    operativas, agilizando el flujo de transacciones y optimizando la cadena de suministro en destino.
+    """)
+    
+    st.markdown("### 🌐 Portafolio de Gestión Homologada (Trilingüe)")
+    
+    # Tres columnas para el despliegue idiomático regional y asiático
+    col_esp, col_por, col_pin = st.columns(3)
+    
+    with col_esp:
+        st.subheader("🇨🇴 Español")
+        st.markdown("""
+        *   **Auditoría Documental y Costos:** Validación de Facturas Comerciales y Certificados de Origen bajo términos Incoterms (**EXW, FOB, CIF**) para contención de sobrecostos y demoras (*Demurrage*).
+        *   **Ingeniería de Costos de Aterrizaje:** Precosteo detallado de aranceles locales, tarifas portuarias y gravámenes específicos, asegurando la viabilidad financiera antes del embarque.
+        *   **Monitoreo de Ventana Logística:** Supervisión analítica de tiempos en terminales (*Berth Windows*, procesos de *Gate-in* y *Gate-out*) para la agilización del despacho anticipado y nacionalización de contenedores.
+        """)
+        
+    with col_por:
+        st.subheader("🇧🇷 Português")
+        st.markdown("""
+        *   **Auditoria de Custos de Desembarque:** Análise analítica e validação crítica de documentos internacionais de frete e conformidade tarifária para o mercado bilateral China-Brasil.
+        *   **Mitigação de Riscos Portuários:** Avaliação estratégica de custos logísticos de ponta a ponta e controle do impacto tributário do **AFRMM** nos principais portos de entrada da América do Sul.
+        *   **Eficiência alfandegária:** Estruturação documental cênica para acelerar os processos de nacionalização e liberação ágil de contêineres e cargas consolidadas.
+        """)
+        
+    with col_pin:
+        st.subheader("🇨🇳 Pīnyīn (pīnyīn)")
+        st.markdown("""
+        *   **海关清关数据审计 (Hǎiguān qīngguān shùjù shěnjié):** 
+            国际贸易清关管理。全面审核和验证商业发票、货运合同和符合贸易术语 (**EXW, FOB, CIF**) 的原产地证书，防止目的地港口产生额外关税或滞期费滞箱费 (*Demurrage*)。
+        *   **到岸成本与关税工程 (Dào'àn chéngběn yǔ guānshuì gōngchéng):** 
+            精算当地进口税率、港口规费及各项特定税费。在货物启运前，提供精准的集装箱预估成本核算矩阵，确保供应链资金流的财务可行性。
+        *   **港口物流窗口监控 (Gǎngkǒu wùliú chuāngkǒu jiānkòng):** 
+            深度分析码头靠泊窗口 (*Berth Windows*)、进港 (*Gate-in*) 与出港 (*Gate-out*) 流程。通过数据化追踪提高集装箱提前申报与快速放行通关效率。
+        """)
+        
+    st.markdown("---")
+    
+    st.subheader("💼 Canales de Intermediación Estratégica")
+    st_col1, st_col2 = st.columns(2)
+    
+    with st_col1:
+        st.info("""
+        **🔗 Soporte en Origen para Agencias de Sourcing y PYMES**
+        Revisión minuciosa de catálogos industriales, coordinación analítica de auditorías de calidad en fábricas aliadas de China y resolución inmediata de inconsistencias comerciales e impositivas.
+        """)
+        
+    with st_col2:
+        st.success("""
+        **📊 Soluciones de Viabilidad de Contenedores**
+        Estructuración en sesiones privadas de análisis de márgenes brutos de ganancia, establecimiento del punto de equilibrio por contenedor (*FCL/LCL*) y proyección de retorno de inversión (ROI) antes del embarque.
+        """)
